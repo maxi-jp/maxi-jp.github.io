@@ -2,17 +2,39 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     list-style: none;
     text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: normal;
 }
 
 body {
     background-color: gray;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 header {
-	background-color: #2196F3;
-	height: 180px;
+    background-color: #2196F3;
+    width: 100%;
+    height: 180px;
+}
+
+#headerContent {
+    height: 180px;
+    max-width: 1920px;
+    margin: 0 auto;
 	display: flex;
     flex-wrap: nowrap;
     align-items: center;
@@ -20,7 +42,30 @@ header {
 }
 
 header h1 {
-	color: #FFC107;
+	color: #fccb0a;
+}
+
+main {
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
+    flex-grow: 1;
+}
+
+header, main, footer {
+    flex-shrink: 0;
+}
+
+.mainColumn {
+    flex-grow: 1;
+    padding: 20px 20px 20px 60px;
+}
+
+.rightColumn {
+    background-color: #edeef0;
+    width: 360px;
+    min-width: 360px;
+    padding: 20px 20px;
 }
 
 #avatar {
@@ -44,8 +89,76 @@ header h1 {
 }
 
 #languages {
+    position: relative;
     background-color: pink;
-	width: 160px;
+	width: 360px;
 	padding: 36px 10px;
-    border-left: 1px solid white;
+}
+
+#languages::before {
+    content: "";
+    width: 2px;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#mainContent {
+    background-color: white;
+    display: flex;
+}
+
+footer {
+    background-color: #2196F3;
+    width: 100%;
+}
+
+#footerContent {
+    height: 40px;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.mainColumn h1, .rightColumn h1 {
+    padding: 6px 20px;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.mainColumn > h1 {
+    background-color: #edeef0;
+}
+
+.rightColumn h1 {
+    background-color: white;
+}
+
+#experience > ul > li > h2 {
+    position: relative;
+    font-size: 1.2em;
+}
+
+#experience > ul > li > h2::after {
+    content: "";
+    background-color: #fccb0a;
+    width: 55px;
+    height: 5px;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+}
+
+#sngular {
+    background-color: #edeef0;
+}
+
+#skills {
+    background-color: #fccb0a;
+}
+
+#twitter {
+
 }
