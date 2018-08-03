@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5 {
 }
 
 body {
-    background-color: gray;
+    /*background-color: gray;*/
     min-height: 100%;
     display: flex;
     flex-direction: column;
@@ -38,7 +38,10 @@ header {
 	display: flex;
     flex-wrap: nowrap;
     align-items: center;
-	color: white;
+}
+
+#headerContent p {
+    color: white;
 }
 
 header h1 {
@@ -56,58 +59,29 @@ header, main, footer {
     flex-shrink: 0;
 }
 
+#mainContent {
+    background-color: white;
+    display: flex;
+}
+
 .mainColumn {
     flex-grow: 1;
     padding: 20px 20px 20px 60px;
 }
 
-.rightColumn {
-    background-color: #edeef0;
-    width: 360px;
-    min-width: 360px;
-    padding: 20px 20px;
+.column1 {
+    width: calc(100% - 28% - 34%);
+    float: left;
 }
 
-#avatar {
-	background-color: red;
-    width: 200px;
-    height: 100%;
-	background-image: url('../images/avatar.png');
-    background-position: 2px 14px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    transform: scaleX(-1);
+.column2 {
+    width: 28%;
+    float: left;
 }
 
-#introduction {
-	background-color: green;
-	flex-grow: 1;
-}
-
-#contact {
-	background-color: orange;
-}
-
-#languages {
-    position: relative;
-    background-color: pink;
-	width: 360px;
-	padding: 36px 10px;
-}
-
-#languages::before {
-    content: "";
-    width: 2px;
-    height: 100%;
-    background-color: white;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-#mainContent {
-    background-color: white;
-    display: flex;
+.column3 {
+    width: 34%;
+    float: right;
 }
 
 footer {
@@ -121,27 +95,104 @@ footer {
     margin: 0 auto;
 }
 
-.mainColumn h1, .rightColumn h1 {
-    padding: 6px 20px;
-    font-size: 1.4em;
-    text-transform: uppercase;
-    margin-bottom: 20px;
+.rightColumn {
+    background-color: #edeef0;
+    width: 360px;
+    min-width: 360px;
+    padding: 20px 20px;
 }
 
-.mainColumn > h1 {
+p {
+    color: #586680;
+}
+
+a {
+    color: black;
+    transition: color 0.5s;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #586680;
+}
+
+.noMargin {
+    margin: 0;
+}
+
+.greyBackground {
     background-color: #edeef0;
+}
+
+.greyBlueBackground {
+    background-color: #586680;
+}
+
+.column1 > div, .column2 > div, .column3 > div {
+    padding: 16px 20px;
+}
+
+#avatar {
+	/*background-color: red;*/
+    width: 200px;
+    min-width: 200px;
+    height: 100%;
+	background-image: url('../images/avatar.png');
+    background-position: 2px 14px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: scaleX(-1);
+}
+
+#introduction {
+	/*background-color: green;*/
+	flex-grow: 1;
+}
+
+#contact {
+    /*background-color: orange;*/
+    margin-right: 20px;
+}
+
+#languages {
+    /*background-color: pink;*/
+    position: relative;
+	width: 360px;
+	padding: 36px 0 36px 20px;
+}
+
+#languages::before {
+    content: "";
+    width: 2px;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.mainColumn > h1, .rightColumn h1 {
+    padding: 6px 20px;
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
 }
 
 .rightColumn h1 {
     background-color: white;
 }
 
-#experience > ul > li > h2 {
+#experience h2, #education h2 {
     position: relative;
-    font-size: 1.2em;
+    font-size: 20px;
+    margin-bottom: 22px;
 }
 
-#experience > ul > li > h2::after {
+#experience h2 > span, #education h2 > span {
+    font-size: 14px;
+}
+
+#experience h2::after, #education h2::after {
     content: "";
     background-color: #fccb0a;
     width: 55px;
@@ -151,14 +202,207 @@ footer {
     bottom: -10px;
 }
 
+#mainContent h3 {
+    font-size: 18px;
+}
+
+#mainContent h4 {
+    font-size: 14px;
+}
+
+#mainContent h5 {
+    font-size: 16px;
+    padding-left: 15px;
+    position: relative
+}
+
+#mainContent p {
+    font-size: 16px;
+    margin: 16px 0 8px 0;
+}
+
+#mainContent li > h5::before {
+    content: "\2013";
+    margin-right: 6px;
+    position: absolute;
+    left: 0;
+}
+
+#mainContent li p {
+    font-size: 13px;
+    margin: 4px 0 10px 16px;
+}
+
+#mainContent li p > spam {
+    cursor: pointer;
+    transition: color 0.5s;
+    color: #dab00a;
+}
+#mainContent li p > spam:hover {
+    color: #586680;
+    text-decoration: underline;
+}
+
 #sngular {
-    background-color: #edeef0;
+    
+}
+
+.column3 h1 {
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: #00000024 0 1px 2px;
+}
+
+.column3 h2 {
+    font-size: 20px;
+    color: white;
+    text-shadow: #00000024 0 1px 2px;
+    margin: 20px 0 12px 0;
 }
 
 #skills {
     background-color: #fccb0a;
+    margin-bottom: 20px;
+}
+
+#skills > ul > li {
+    display: inline-block;
+    background-color: white;
+    border-radius: 10px;
+    padding: 8px 10px 8px 10px;
+    margin: 0 4px 8px 0;
+    box-shadow: #00000024 0 1px 6px 1px;
+    transition: box-shadow 0.5s;
+}
+
+#skills > ul > li:hover {
+    box-shadow: none;
+}
+
+#tools {
+    
+}
+
+#tools > ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#tools > ul > li {
+    background-color: white;
+    width: calc(25% - 6px);
+    border-radius: 10px;
+    text-align: center;
+    padding: 8px 4px 4px 4px;
+    margin-bottom: 8px;
+    box-shadow: #00000070 0 1px 6px 1px;
+    transition: box-shadow 0.5s, transform 0.5s;
+    position: relative;
+    height: 110px;
+}
+
+#tools > ul > li:hover {
+    box-shadow: none;
+    transform: translateY(1px);
+}
+
+#tools > ul > li > img {
+    width: 100%;
+    padding: 0 10px;
+}
+
+#tools > ul > li > p {
+    margin: 0;
+    font-size: 15px;
+    position: absolute;
+    bottom: 2px;
+    width: calc(100% - 8px);
 }
 
 #twitter {
 
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen
+  and (max-width: 480px) {
+    #mainContent {
+        background-color: orange;
+    }
+}
+
+@media only screen
+  and (min-width: 481px)
+  and (max-width: 1024px) {
+
+    #mainContent {
+        background-color: orangered;
+    }
+
+    .column1 {
+        width: 50%;
+        float: left;
+    }
+
+    .column2 {
+        width: 50%;
+        float: right;
+    }
+
+    .column3 {
+        width: 100%;
+        float: none;
+        clear: both;
+    }
+
+    #skills {
+        width: 50%;
+        float: left;
+    }
+
+    #tools {
+        width: 50%;
+        float: right;
+    }
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen
+  and (min-width: 1025px)
+  and (max-width: 1600px) {
+
+    #mainContent {
+        background-color: rgb(255, 0, 149);
+    }
+
+    .column1 {
+        width: 50%;
+        float: left;
+    }
+
+    .column2 {
+        width: 50%;
+        float: right;
+    }
+
+    .column3 {
+        width: 100%;
+        float: none;
+        clear: both;
+    }
+
+    #skills {
+        width: 50%;
+        float: left;
+    }
+
+    #tools {
+        width: 50%;
+        float: right;
+    }
 }
