@@ -345,6 +345,7 @@ a:hover {
     transition: box-shadow 0.5s, transform 0.5s;
     position: relative;
     height: 110px;
+    perspective: 600px;
 }
 
 #tools > ul > li:hover {
@@ -364,6 +365,68 @@ a:hover {
     position: absolute;
     bottom: 2px;
     width: calc(100% - 8px);
+}
+
+.cube {
+    width: 80%;
+    padding-top: 80%;
+    margin: 0 auto;
+    position: relative;
+    transform-style: preserve-3d;
+    /*transform: translateZ(-100px);*/
+    transform: translateZ(-100px) rotateY(   0deg);
+    transition: transform 1s ease-in-out;
+    animation-name: emptyanim;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease;
+    animation-play-state: paused; 
+}
+.front_left_top:hover {
+    animation-name: front_left_top_keys;
+    animation-play-state: running;
+}
+.cubeFace {
+    position: absolute;
+    top: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+/*.cubeFaceFront  { background: hsla(  0, 100%, 50%, 0.7); } */
+/*.cubeFaceRight  { background: hsla( 60, 100%, 50%, 0.7); } */
+/*.cubeFaceBack   { background: hsla(120, 100%, 50%, 0.7); } */
+/*.cubeFaceLeft   { background: hsla(180, 100%, 50%, 0.7); } */
+/*.cubeFaceTop    { background: hsla(240, 100%, 50%, 0.7); } */
+/*.cubeFaceBottom { background: hsla(300, 100%, 50%, 0.7); } */
+
+.cubeFaceFront  { transform: rotateY(  0deg) rotateY(-90deg) translateX(50%) rotateY(90deg); }
+.cubeFaceRight  { transform: rotateY( 90deg) rotateY(-90deg) translateX(50%) rotateY(90deg); }
+.cubeFaceBack   { transform: rotateY(180deg) rotateY(-90deg) translateX(50%) rotateY(90deg); }
+.cubeFaceLeft   { transform: rotateY(-90deg) rotateY(-90deg) translateX(50%) rotateY(90deg); }
+.cubeFaceTop    { transform: rotateX( 90deg) rotateY(-90deg) translateX(50%) rotateY(90deg); }
+.cubeFaceBottom { transform: rotateX(-90deg) rotateY(-90deg) translateX(50%) rotateY(90deg); }
+
+.cube.showFront  { transform: translateZ(-100px) rotateY(   0deg); }
+.cube.showRight  { transform: translateZ(-100px) rotateY( -90deg); }
+.cube.showBack   { transform: translateZ(-100px) rotateY(-180deg); }
+.cube.showLeft   { transform: translateZ(-100px) rotateY(  90deg); }
+.cube.showTop    { transform: translateZ(-100px) rotateX( -90deg); }
+.cube.showBottom { transform: translateZ(-100px) rotateX(  90deg); }
+
+@keyframes emptyanim {}
+@keyframes front_left_top_keys {
+    0%  { transform: translateZ(-100px) rotateY(   0deg); }
+    33% { transform: translateZ(-100px) rotateY(  90deg); }
+    66% { transform: translateZ(-100px) rotateX( -90deg); }
+    100% { transform: translateZ(-100px) rotateY(   0deg); }
+}
+
+#tools .cube > .cubeFace > img {
+    width: 100%;
 }
 
 #twitter {
