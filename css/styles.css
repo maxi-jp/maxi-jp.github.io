@@ -132,6 +132,10 @@ a:hover {
     padding: 16px 20px;
 }
 
+.column1 > div > div {
+    margin-bottom: 20px;
+}
+
 #avatar {
 	/*background-color: red;*/
     width: 200px;
@@ -217,7 +221,7 @@ a:hover {
 }
 
 #mainContent p {
-    font-size: 16px;
+    font-size: 15px;
     margin: 16px 0 8px 0;
 }
 
@@ -252,20 +256,20 @@ a:hover {
     text-transform: uppercase;
     margin-bottom: 20px;
     color: white;
-    text-shadow: #00000024 0 1px 2px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .column3 h2 {
     font-size: 20px;
     color: white;
-    text-shadow: #00000024 0 1px 2px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     margin: 20px 0 12px 0;
 }
 
 .column3 p {
     font-size: 16px;
     color: white;
-    text-shadow: #00000024 0 1px 2px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     margin: 20px 0 12px 0;
 }
 
@@ -383,10 +387,19 @@ a:hover {
     animation-timing-function: ease;
     animation-play-state: paused; 
 }
+.cube:hover {
+	animation-play-state: running;
+}
 .front_left_top:hover {
     animation-name: front_left_top_keys;
-    animation-play-state: running;
 }
+.front_left_top_right:hover {
+	animation-name: front_left_top_right_keys;
+}
+.front_left_top_back_right:hover {
+	animation-name: front_left_top_back_right_keys;
+}
+
 .cubeFace {
     position: absolute;
     top: 0;
@@ -422,6 +435,21 @@ a:hover {
     0%  { transform: translateZ(-100px) rotateY(   0deg); }
     33% { transform: translateZ(-100px) rotateY(  90deg); }
     66% { transform: translateZ(-100px) rotateX( -90deg); }
+    100% { transform: translateZ(-100px) rotateY(   0deg); }
+}
+@keyframes front_left_top_right_keys {
+    0%   { transform: translateZ(-100px) rotateY(   0deg); }
+    30%  { transform: translateZ(-100px) rotateY(  90deg); }
+    50%  { transform: translateZ(-100px) rotateX( -90deg); }
+    70%  { transform: translateZ(-100px) rotateY( -90deg); }
+    100% { transform: translateZ(-100px) rotateY(   0deg); }
+}
+@keyframes front_left_top_back_right_keys {
+    0%   { transform: translateZ(-100px) rotateY(   0deg); }
+    25%  { transform: translateZ(-100px) rotateY(  90deg); }
+    45%  { transform: translateZ(-100px) rotateX( -90deg); }
+    65%  { transform: translateZ(-100px) rotateY(-180deg); }
+    80%  { transform: translateZ(-100px) rotateY( -90deg); }
     100% { transform: translateZ(-100px) rotateY(   0deg); }
 }
 
