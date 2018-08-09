@@ -132,7 +132,7 @@ a:hover {
     padding: 16px 20px;
 }
 
-.column1 > div > div {
+.column1 > div > div, .rightColumn > div > div {
     margin-bottom: 20px;
 }
 
@@ -192,7 +192,7 @@ a:hover {
     margin-bottom: 22px;
 }
 
-#experience h2 > span, #education h2 > span {
+#mainContent h2 > span, #mainContent h3 > span {
     font-size: 14px;
 }
 
@@ -225,6 +225,10 @@ a:hover {
     margin: 16px 0 8px 0;
 }
 
+#mainContent ul {
+    margin-top: 8px;
+}
+
 #mainContent li > h5::before {
     content: "\2013";
     margin-right: 6px;
@@ -232,9 +236,20 @@ a:hover {
     left: 0;
 }
 
+#mainContent li {
+    margin-bottom: 8px;
+}
+
 #mainContent li p {
     font-size: 13px;
     margin: 4px 0 10px 16px;
+}
+
+#mainContent li p > a {
+    color: #586680;
+}
+#mainContent li p > a:hover {
+    color: black;
 }
 
 #mainContent li p > spam {
@@ -271,6 +286,16 @@ a:hover {
     color: white;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     margin: 20px 0 12px 0;
+}
+
+#publications {
+    max-height: 228px;
+    overflow: hidden;
+    box-shadow: inset black 0 -20px 28px -26px;
+    transition: max-height 1s, box-shadow 1.5s;
+}
+#publications:hover {
+    box-shadow: none;
 }
 
 #skills {
