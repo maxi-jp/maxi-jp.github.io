@@ -7,3 +7,9 @@ publications.addEventListener("mouseenter", function () {
 publications.addEventListener("mouseleave", function () {
     this.style.maxHeight = null;
 });
+
+var rightColumn = document.getElementsByClassName("rightColumn")[0];
+
+document.getElementById("rightColumnButtom").addEventListener("click", function () {
+	rightColumn.classList.toggle("active");
+});

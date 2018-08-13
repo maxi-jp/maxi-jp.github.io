@@ -40,12 +40,21 @@ header {
     align-items: center;
 }
 
-#headerContent p {
+#headerContent p, #footerContent p {
     color: white;
+}
+
+#headerContent a, #footerContent a {
+    color: white;
+}
+#headerContent a:hover, #footerContent a:hover {
+    color: #edeef0;
 }
 
 header h1 {
 	color: #fccb0a;
+	line-height: 30px;
+	margin: 8px 0;
 }
 
 main {
@@ -136,6 +145,30 @@ a:hover {
     margin-bottom: 20px;
 }
 
+#rightColumnButtom {
+    display: none;
+    width: 80px;
+    height: 39px;
+    position: relative;
+    left: -88px;
+    float: left;
+    text-align: center;
+    border-style: solid;
+    border-width: 7px 0 7px 7px;
+    border-color: #edeef0;
+    border-radius: 20px 0 0 20px;
+    background-color: white;
+    box-shadow: -3px 2px 6px -2px #586680;
+}
+
+#rightColumnButtom > img {
+    height: 100%;
+}
+
+#rightColumnButtom:first-child > img {
+    float: left;
+}
+
 #avatar {
 	/*background-color: red;*/
     width: 200px;
@@ -155,13 +188,14 @@ a:hover {
 
 #contact {
     /*background-color: orange;*/
-    margin-right: 20px;
+    margin: 0 20px 0 16px;
 }
 
 #languages {
     /*background-color: pink;*/
     position: relative;
 	width: 360px;
+	min-width: 360px;
 	padding: 36px 0 36px 20px;
 }
 
@@ -253,6 +287,7 @@ a:hover {
 }
 
 #mainContent li p > spam {
+	display: none;
     cursor: pointer;
     transition: color 0.5s;
     color: #dab00a;
@@ -377,6 +412,10 @@ a:hover {
     perspective: 600px;
 }
 
+#tools > ul > li:last-child {
+    visibility: hidden;
+}
+
 #tools > ul > li:hover {
     box-shadow: none;
     transform: translateY(1px);
@@ -385,6 +424,7 @@ a:hover {
 #tools > ul > li > img {
     width: 100%;
     padding: 0 10px;
+    max-width: 86px;
 }
 
 #tools > ul > li > p {
@@ -398,6 +438,7 @@ a:hover {
 
 .cube {
     width: 80%;
+    max-width: 70px;
     padding-top: 80%;
     margin: 0 auto;
     position: relative;
@@ -410,7 +451,7 @@ a:hover {
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-timing-function: ease;
-    animation-play-state: paused; 
+    animation-play-state: paused;
 }
 .cube:hover {
 	animation-play-state: running;
@@ -483,25 +524,287 @@ a:hover {
 }
 
 #twitter {
-
+	height: 100%;
+    line-height: 40px;
+    text-align: right;
+    padding-right: 20px;
+    font-size: 13px;
 }
 
 
-/* Extra small devices (phones, 600px and down) */
+/* Extra small devices (phones, 480px and down) */
 @media only screen
   and (max-width: 480px) {
+    
+    #headerContent {
+        display: inline;
+    }
+
+    #avatar {
+        float: left;
+    }
+
+    header h1 {
+        line-height: 28px;
+        margin: 6px 0;
+    }
+
+    #introduction, #contact, #languages {
+        padding-right: 20px;
+        margin-top: 8px;
+    }
+
+    #contact {
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    #contact::before {
+        visibility: hidden;
+    }
+
+    #languages {
+        padding: 0;
+        display: flex;
+    }
+
+    #languages > p {
+        margin-right: 20px;
+    }
+
+    #languages::before {
+        visibility: hidden;
+    }
+
     #mainContent {
-        background-color: orange;
+        /*background-color: orangered;*/
+		overflow: hidden;
+        position: relative;
+    }
+	
+	.mainColumn {
+		padding: 20px;
+	}
+	
+	.rightColumn {
+		position: absolute;
+		right: -360px;
+		box-shadow: none;
+		transition: left 0.5s, right 0.5s, box-shadow 0.5s;
+	}
+	.rightColumn.active {
+		box-shadow: -1px 2px 6px 0px #586680;
+		right: 0;
+    }
+    .rightColumn.active > #rightColumnButtom {
+        width: 68px;
+    }
+	
+	#rightColumnButtom {
+		display: block;
+		cursor: pointer; 
+	}
+
+    .column1 {
+        width: 100%;
+    }
+
+    .column2 {
+        width: 100%;
+    }
+
+    .column3 {
+        width: 100%;
+        float: none;
+        clear: both;
+    }
+
+    .column2 > div {
+        padding-top: 0;
+    }
+	
+	#languages {
+		width: unset;
+		min-width: fit-content;
+		margin-right: 20px;
+	}
+	#languages::before {
+		height: 60px;
+		top: 24px;
+	}
+
+    #skills {
+        margin: 0 32px 20px 32px;
+    }
+
+    #tools {
+        margin: 0 32px 20px 32px;
+    }
+
+    #tools > ul > li > img {
+        max-width: 86px;
+    }
+
+    .cube {
+        max-width: 70px;
     }
 }
 
+/* Small devices (between 480px and 768px) */
 @media only screen
   and (min-width: 481px)
+  and (max-width: 768px) {
+
+    #headerContent {
+        display: inline;
+    }
+
+    #avatar {
+        float: left;
+    }
+
+    header h1 {
+        line-height: 28px;
+        margin: 6px 0;
+    }
+
+    #introduction, #contact, #languages {
+        padding-right: 20px;
+        margin-top: 8px;
+    }
+
+    #contact {
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    #contact::before {
+        visibility: hidden;
+    }
+
+    #languages {
+        padding: 0;
+        display: flex;
+    }
+
+    #languages > p {
+        margin-right: 20px;
+    }
+
+    #languages::before {
+        visibility: hidden;
+    }
+
+    #mainContent {
+        /*background-color: orangered;*/
+		overflow: hidden;
+        position: relative;
+    }
+	
+	.mainColumn {
+		padding: 20px;
+	}
+	
+	.rightColumn {
+		position: absolute;
+		right: -360px;
+		box-shadow: none;
+		transition: left 0.5s, right 0.5s, box-shadow 0.5s;
+	}
+	.rightColumn.active {
+		box-shadow: -1px 2px 6px 0px #586680;
+		right: 0;
+    }
+    .rightColumn.active > #rightColumnButtom {
+        width: 68px;
+    }
+	
+	#rightColumnButtom {
+		display: block;
+		cursor: pointer; 
+	}
+
+    .column1 {
+        width: 100%;
+    }
+
+    .column2 {
+        width: 100%;
+    }
+
+    .column3 {
+        width: 100%;
+        float: none;
+        clear: both;
+    }
+
+    .column2 > div {
+        padding-top: 0;
+    }
+	
+	#languages {
+		width: unset;
+		min-width: fit-content;
+		margin-right: 20px;
+	}
+	#languages::before {
+		height: 60px;
+		top: 24px;
+	}
+
+    #skills {
+        margin: 0 32px 20px 32px;
+    }
+
+    #tools {
+        margin: 0 32px 20px 32px;
+    }
+
+    #tools > ul > li > img {
+        max-width: 86px;
+    }
+
+    .cube {
+        max-width: 70px;
+    }
+}
+
+/* Small devices (between 768px and 1024px) */
+@media only screen
+  and (min-width: 769px)
   and (max-width: 1024px) {
 
     #mainContent {
-        background-color: orangered;
+		overflow: hidden;
+		position: relative;
     }
+	
+	.mainColumn {
+		padding: 20px;
+	}
+	
+	.rightColumn {
+		position: absolute;
+		right: -360px;
+		box-shadow: none;
+		transition: left 0.5s, right 0.5s, box-shadow 0.5s;
+	}
+	.rightColumn.active {
+		box-shadow: -1px 2px 6px 0px #586680;
+		right: 0;
+	}
+    .rightColumn.active > #rightColumnButtom {
+        width: 68px;
+    }
+	
+	#rightColumnButtom {
+		display: block;
+		cursor: pointer; 
+	}
 
     .column1 {
         width: 50%;
@@ -518,6 +821,30 @@ a:hover {
         float: none;
         clear: both;
     }
+	
+	#contact {
+		position: relative;
+		padding-left: 16px;
+	}
+	#contact::before {
+		content: "";
+		width: 2px;
+		height: 100%;
+		background-color: white;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	
+	#languages {
+		width: unset;
+		min-width: fit-content;
+		margin-right: 20px;
+	}
+	#languages::before {
+		height: 60px;
+		top: 24px;
+	}
 
     #skills {
         width: 50%;
