@@ -35,7 +35,7 @@ header {
     height: 180px;
     max-width: 1920px;
     margin: 0 auto;
-	display: flex;
+    display: flex;
     flex-wrap: nowrap;
     align-items: center;
 }
@@ -52,9 +52,9 @@ header {
 }
 
 header h1 {
-	color: #fccb0a;
-	line-height: 30px;
-	margin: 8px 0;
+    color: #fccb0a;
+    line-height: 30px;
+    margin: 8px 0;
 }
 
 main {
@@ -111,6 +111,12 @@ footer {
     padding: 20px 20px;
 }
 
+ #loader {
+     display: none;
+     text-align: center;
+     line-height: 24px;
+ }
+
 p {
     color: #586680;
 }
@@ -134,7 +140,7 @@ a:hover {
 }
 
 .greyBlueBackground {
-    background-color: #586680;
+    background-color: #586680 !important;
 }
 
 .column1 > div, .column2 > div, .column3 > div {
@@ -144,6 +150,60 @@ a:hover {
 .column1 > div > div, .rightColumn > div > div {
     margin-bottom: 20px;
 }
+
+#mobileMenu {
+    display: none;
+}
+
+#mobileMenu > ul {
+    display: flex;
+    margin-top: 0 !important;
+}
+
+#mobileMenu li {
+    margin: 0 !important;    
+}
+
+#mainMenu > li {
+    padding: 6px 0;
+    text-align: center;
+    flex-grow: 1;
+    font-size: 18px;
+    cursor: pointer;
+}
+#mainMenu > li:hover {
+    -webkit-box-shadow: inset 0px -6px 0px -1px #586680;
+    -moz-box-shadow: inset 0px -6px 0px -1px #586680;
+    box-shadow: inset 0px -6px 0px -1px #586680;
+}
+#mainMenu > li:hover, #mainMenu > li.active {
+    background-color: #586680;
+    color: white;
+}
+
+#experienceMenu {
+    display: none;
+    justify-content: flex-end;
+    background-color: #586680;
+    color: white;
+    height: 0;
+    transition: height 0.5s;
+    overflow: hidden;
+}
+#experienceMenu.active {
+    height: 32px;
+}
+
+#experienceMenu > li {
+    font-size: 16px;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+#experienceMenu li:hover, #experienceMenu li.active {
+    background-color: #fccb0a;
+    color: black;
+}
+
 
 #rightColumnButtom {
     display: none;
@@ -170,11 +230,11 @@ a:hover {
 }
 
 #avatar {
-	/*background-color: red;*/
+    /*background-color: red;*/
     width: 200px;
     min-width: 200px;
     height: 100%;
-	background-image: url('../images/avatar.png');
+    background-image: url('../images/avatar.png');
     background-position: 2px 14px;
     background-size: contain;
     background-repeat: no-repeat;
@@ -182,8 +242,8 @@ a:hover {
 }
 
 #introduction {
-	/*background-color: green;*/
-	flex-grow: 1;
+    /*background-color: green;*/
+    flex-grow: 1;
 }
 
 #contact {
@@ -194,9 +254,9 @@ a:hover {
 #languages {
     /*background-color: pink;*/
     position: relative;
-	width: 360px;
-	min-width: 360px;
-	padding: 36px 0 36px 20px;
+    width: 360px;
+    min-width: 360px;
+    padding: 36px 0 36px 20px;
 }
 
 #languages::before {
@@ -287,7 +347,7 @@ a:hover {
 }
 
 #mainContent li p > spam {
-	display: none;
+    display: none;
     cursor: pointer;
     transition: color 0.5s;
     color: #dab00a;
@@ -454,16 +514,16 @@ a:hover {
     animation-play-state: paused;
 }
 .cube:hover {
-	animation-play-state: running;
+    animation-play-state: running;
 }
 .front_left_top:hover {
     animation-name: front_left_top_keys;
 }
 .front_left_top_right:hover {
-	animation-name: front_left_top_right_keys;
+    animation-name: front_left_top_right_keys;
 }
 .front_left_top_back_right:hover {
-	animation-name: front_left_top_back_right_keys;
+    animation-name: front_left_top_back_right_keys;
 }
 
 .cubeFace {
@@ -524,7 +584,7 @@ a:hover {
 }
 
 #twitter {
-	height: 100%;
+    height: 100%;
     line-height: 40px;
     text-align: right;
     padding-right: 20px;
@@ -568,6 +628,9 @@ a:hover {
     #languages {
         padding: 0;
         display: flex;
+        width: unset;
+        min-width: fit-content;
+        margin-right: 20px;
     }
 
     #languages > p {
@@ -576,36 +639,51 @@ a:hover {
 
     #languages::before {
         visibility: hidden;
+        height: 60px;
+        top: 24px;
     }
 
     #mainContent {
         /*background-color: orangered;*/
-		overflow: hidden;
+        overflow: hidden;
         position: relative;
+        flex-direction: column;
     }
-	
-	.mainColumn {
-		padding: 20px;
-	}
-	
-	.rightColumn {
-		position: absolute;
-		right: -360px;
-		box-shadow: none;
-		transition: left 0.5s, right 0.5s, box-shadow 0.5s;
-	}
-	.rightColumn.active {
-		box-shadow: -1px 2px 6px 0px #586680;
-		right: 0;
+
+    #loader {
+        display: block;
     }
-    .rightColumn.active > #rightColumnButtom {
-        width: 68px;
+    
+    .mainColumn {
+        padding: 12px;
     }
-	
-	#rightColumnButtom {
-		display: block;
-		cursor: pointer; 
-	}
+    
+    .rightColumn {
+        display: none;
+        box-shadow: none;
+        transition: none;
+        background-color: white;
+    }
+    .rightColumn.active {
+        display: block;
+        position: relative;
+        right: 0;
+        padding: 0 12px 12px 12px;
+    }
+
+    #education {
+        /*background-color: #edeef0;*/
+        /*padding: 12px;*/
+    }
+
+    #education > div {
+        background-color: #edeef0;
+        padding: 12px;
+        margin-bottom: 12px;
+    }
+    #education > div:last-child {
+        margin-bottom: 0;
+    }
 
     .column1 {
         width: 100%;
@@ -624,27 +702,91 @@ a:hover {
     .column2 > div {
         padding-top: 0;
     }
-	
-	#languages {
-		width: unset;
-		min-width: fit-content;
-		margin-right: 20px;
-	}
-	#languages::before {
-		height: 60px;
-		top: 24px;
-	}
-
-    #skills {
-        margin: 0 32px 20px 32px;
+    
+    .column1 > div, .column2 > div, .column3 > div {
+        padding: 10px 12px;
+        background-color: #edeef0;
     }
 
-    #tools {
-        margin: 0 32px 20px 32px;
+    .column1 > div:last-child {
+        margin-top: 12px;
+    }
+    .column1 > div:not(:last-child) {
+        margin-bottom: 12px;
+    }
+    
+    .mainColumn > h1, .rightColumn h1 {
+        /*padding: 6px 12px;*/
+        display: none;
+    }
+
+    #skills, #tools {
+        margin: 0 12px 12px 12px;
+    }
+
+    .column3 h1 {
+        margin-bottom: 12px;
+    }
+
+    .column3 h2 {
+        margin: 12px 0;
+    }
+
+    .column3 p {
+        margin: 12px 0 8px 0;
+    }
+
+    #experience.active {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    #experience:not(.active) {
+        display: none;
+    }
+
+    #sngular:not(.active),
+    #esne:not(.active),
+    #wildbit:not(.active),
+    #digital_jokers:not(.active),
+    #others:not(.active) {
+        display: none;
+    }
+
+    #wildbit {
+        
+    }
+
+    .column3:not(.active) {
+        display: none;
+    }
+    
+    #tools > ul > li {
+        height: 80px;
+        margin-bottom: 6px;
     }
 
     #tools > ul > li > img {
         max-width: 86px;
+    }
+    
+    #tools > ul > li p {
+        width: 100%;
+        left: 0;
+        bottom: 4px;
+        font-size: 13px !important;
+        line-height: 10px !important;
+    }
+    
+    .mainColumn > h1:first-child {
+        margin-bottom: 0;
+    }
+    
+    #mobileMenu {
+        display: block;   
+        border-width: 4px 0 0 0;
+        border-style: solid;
+        border-color: #fccb0a;
     }
 
     .cube {
@@ -701,32 +843,32 @@ a:hover {
 
     #mainContent {
         /*background-color: orangered;*/
-		overflow: hidden;
+        overflow: hidden;
         position: relative;
     }
-	
-	.mainColumn {
-		padding: 20px;
-	}
-	
-	.rightColumn {
-		position: absolute;
-		right: -360px;
-		box-shadow: none;
-		transition: left 0.5s, right 0.5s, box-shadow 0.5s;
-	}
-	.rightColumn.active {
-		box-shadow: -1px 2px 6px 0px #586680;
-		right: 0;
+    
+    .mainColumn {
+        padding: 20px;
+    }
+    
+    .rightColumn {
+        position: absolute;
+        right: -360px;
+        box-shadow: none;
+        transition: left 0.5s, right 0.5s, box-shadow 0.5s;
+    }
+    .rightColumn.active {
+        box-shadow: -1px 2px 6px 0px #586680;
+        right: 0;
     }
     .rightColumn.active > #rightColumnButtom {
         width: 68px;
     }
-	
-	#rightColumnButtom {
-		display: block;
-		cursor: pointer; 
-	}
+    
+    #rightColumnButtom {
+        display: block;
+        cursor: pointer; 
+    }
 
     .column1 {
         width: 100%;
@@ -745,16 +887,16 @@ a:hover {
     .column2 > div {
         padding-top: 0;
     }
-	
-	#languages {
-		width: unset;
-		min-width: fit-content;
-		margin-right: 20px;
-	}
-	#languages::before {
-		height: 60px;
-		top: 24px;
-	}
+    
+    #languages {
+        width: unset;
+        min-width: fit-content;
+        margin-right: 20px;
+    }
+    #languages::before {
+        height: 60px;
+        top: 24px;
+    }
 
     #skills {
         margin: 0 32px 20px 32px;
@@ -779,32 +921,32 @@ a:hover {
   and (max-width: 1024px) {
 
     #mainContent {
-		overflow: hidden;
-		position: relative;
+        overflow: hidden;
+        position: relative;
     }
-	
-	.mainColumn {
-		padding: 20px;
-	}
-	
-	.rightColumn {
-		position: absolute;
-		right: -360px;
-		box-shadow: none;
-		transition: left 0.5s, right 0.5s, box-shadow 0.5s;
-	}
-	.rightColumn.active {
-		box-shadow: -1px 2px 6px 0px #586680;
-		right: 0;
-	}
+    
+    .mainColumn {
+        padding: 20px;
+    }
+    
+    .rightColumn {
+        position: absolute;
+        right: -360px;
+        box-shadow: none;
+        transition: left 0.5s, right 0.5s, box-shadow 0.5s;
+    }
+    .rightColumn.active {
+        box-shadow: -1px 2px 6px 0px #586680;
+        right: 0;
+    }
     .rightColumn.active > #rightColumnButtom {
         width: 68px;
     }
-	
-	#rightColumnButtom {
-		display: block;
-		cursor: pointer; 
-	}
+    
+    #rightColumnButtom {
+        display: block;
+        cursor: pointer; 
+    }
 
     .column1 {
         width: 50%;
@@ -821,39 +963,56 @@ a:hover {
         float: none;
         clear: both;
     }
-	
-	#contact {
-		position: relative;
-		padding-left: 16px;
-	}
-	#contact::before {
-		content: "";
-		width: 2px;
-		height: 100%;
-		background-color: white;
-		position: absolute;
-		left: 0;
-		top: 0;
-	}
-	
-	#languages {
-		width: unset;
-		min-width: fit-content;
-		margin-right: 20px;
-	}
-	#languages::before {
-		height: 60px;
-		top: 24px;
-	}
+    
+    #contact {
+        position: relative;
+        padding-left: 16px;
+    }
+    #contact::before {
+        content: "";
+        width: 2px;
+        height: 100%;
+        background-color: white;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    
+    #languages {
+        width: unset;
+        min-width: fit-content;
+        margin-right: 20px;
+    }
+    #languages::before {
+        height: 60px;
+        top: 24px;
+    }
 
     #skills {
-        width: 50%;
+        width: calc(50% - 12px);
         float: left;
+        margin-right: 12px;
+        padding-right: 12px;
     }
 
     #tools {
         width: 50%;
         float: right;
+    }
+
+}
+
+/* Special treatment for the tools box */
+@media only screen
+  and (min-width: 1025px)
+  and (max-width: 1200px) {
+
+    #tools {
+        /*background: red !important;*/
+    }
+
+    #tools > ul > li {
+        width: calc(33% - 6px);
     }
 
 }
@@ -884,8 +1043,10 @@ a:hover {
     }
 
     #skills {
-        width: 50%;
+        width: calc(50% - 12px);
         float: left;
+        margin-right: 12px;
+        padding-right: 12px;
     }
 
     #tools {

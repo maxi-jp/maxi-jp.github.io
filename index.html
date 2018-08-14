@@ -12,6 +12,7 @@
   
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/loader.css">
 
 </head>
 
@@ -39,12 +40,26 @@
 
   <main>
     <div id="mainContent">
+
+      <nav id="mobileMenu" class="greyBackground">
+        <ul id="mainMenu">
+          <li id="menuExperience">Experience</li>
+          <li id="menuSkills" >Skills & Tools</li>
+          <li id="menuEducation" >Education</li>
+        </ul>
+        <ul id="experienceMenu">
+          <li id="expSubMenuNow" class="active">Now</li>
+          <li id="expSubMenuPast">In the past</li>
+          <li id="expSubMenuOthers">Others</li>
+        </ul>
+      </nav>
+
       <div class="mainColumn">
         <h1 class="greyBackground">Experience</h1>
 
         <div id="experience">
           <div class="column1">
-            <div id="sngular" class="greyBackground">
+            <div id="sngular" class="greyBackground active">
               <h2><a href="https://sngular.team/" title="Sngular website" target="_black">Sngular</a></h2>
               <h3>Software Developer</h3>
               <h4>January 2018 - now</h4>
@@ -67,7 +82,7 @@
             </div>
 
             <div>
-              <div id="esne">
+              <div id="esne" class="active">
                 <h2><a href="http://www.esne.es/" title="ESNE's website" target="_black">ESNE</a> <span>University School of Design, Innovation and Technology</span></h2>
                 <h3>Professor (Design and Development of Videogames - University Degree)</h3>
                 <h4>September 2016 - now</h4>
@@ -375,6 +390,15 @@
         </div>
       </div>
     </div>
+
+    <div id="loader">
+        <div>
+          <p>Wellcome to my CV's webpage!</p>
+          <p>What do you want to see? <spam id="textEmoji">ლ(ಠ_ಠ ლ)</spam></p>
+        </div>
+      <div class="lds-css ng-scope"><div style="width:100%;height:100%;margin: 0 auto;" class="lds-pacman"><div><div></div><div></div><div></div></div><div><div></div><div></div></div></div>
+    </div>
+
   </main>
 
   <footer class="greyBlueBackground">
