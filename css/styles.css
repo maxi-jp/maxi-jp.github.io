@@ -662,6 +662,7 @@ a:hover {
         display: none;
         box-shadow: none;
         transition: none;
+        width: 100%;
         background-color: white;
     }
     .rightColumn.active {
