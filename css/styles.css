@@ -183,7 +183,7 @@ a:hover {
 
 #experienceMenu {
     display: none;
-    justify-content: flex-end;
+    /*justify-content: flex-end;*/
     background-color: #586680;
     color: white;
     height: 0;
@@ -223,10 +223,11 @@ a:hover {
 
 #rightColumnButtom > img {
     height: 100%;
+    float: left;
 }
 
-#rightColumnButtom:first-child > img {
-    float: left;
+#rightColumnButtom > img:first-child {
+    transition: transform 0.5s;
 }
 
 #avatar {
@@ -249,6 +250,15 @@ a:hover {
 #contact {
     /*background-color: orange;*/
     margin: 0 20px 0 16px;
+}
+
+#contactEmail:before {
+    /*content: "";*/
+    background-color: red;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: -10px;
 }
 
 #languages {
@@ -314,6 +324,10 @@ a:hover {
     position: relative
 }
 
+a > img.externalLink {
+    height: 11px;
+}
+
 #mainContent p {
     font-size: 15px;
     margin: 16px 0 8px 0;
@@ -321,6 +335,23 @@ a:hover {
 
 #mainContent ul {
     margin-top: 8px;
+}
+
+#mainContent ul > li > ul {
+    margin: 2px 0 0 14px;
+}
+#mainContent ul > li > ul > li {
+    position: relative;
+    padding-left: 8px;
+    margin-bottom: 3px;
+    font-size: 13px;
+    color: #586680;
+}
+#mainContent ul > li > ul > li::before {
+    content: "-";
+    position: absolute;
+    left: 0;
+    color: #586680;
 }
 
 #mainContent li > h5::before {
@@ -384,6 +415,7 @@ a:hover {
 }
 
 #publications {
+    position: relative;
     max-height: 228px;
     overflow: hidden;
     box-shadow: inset black 0 -20px 28px -26px;
@@ -391,6 +423,22 @@ a:hover {
 }
 #publications:hover {
     box-shadow: none;
+}
+#publications:after {
+    content: "\2039";
+    position: absolute;
+    color: #586680;
+    bottom: -4px;
+    left: 50%;
+    text-align: center;
+    font-size: 47px;
+    text-orientation: unset;
+    line-height: 0;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+#publications:hover:after {
+    content: none;
 }
 
 #skills {
@@ -602,6 +650,9 @@ a:hover {
 
     #avatar {
         float: left;
+        width: 140px;
+        min-width: 140px;
+        background-position: bottom;
     }
 
     header h1 {
@@ -610,8 +661,8 @@ a:hover {
     }
 
     #introduction, #contact, #languages {
-        padding-right: 20px;
-        margin-top: 8px;
+        padding-right: 10px;
+        margin-top: 20px;
     }
 
     #contact {
@@ -623,6 +674,10 @@ a:hover {
 
     #contact::before {
         visibility: hidden;
+    }
+
+    #contact:not(.active) {
+        display: none;
     }
 
     #languages {
@@ -865,6 +920,13 @@ a:hover {
     .rightColumn.active > #rightColumnButtom {
         width: 68px;
     }
+    .rightColumn.active > #rightColumnButtom > img:first-child {
+        -moz-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
     
     #rightColumnButtom {
         display: block;
@@ -942,6 +1004,13 @@ a:hover {
     }
     .rightColumn.active > #rightColumnButtom {
         width: 68px;
+    }
+    .rightColumn.active > #rightColumnButtom > img:first-child {
+        -moz-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        transform: rotate(180deg);
     }
     
     #rightColumnButtom {
