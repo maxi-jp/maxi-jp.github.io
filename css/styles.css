@@ -252,13 +252,22 @@ a:hover {
     margin: 0 20px 0 16px;
 }
 
-#contactEmail:before {
-    /*content: "";*/
-    background-color: red;
+#contactEmail::before, #contactPhone::before, #contactGithub::before {
+    content: none;
+	background-size: contain;
     width: 20px;
     height: 20px;
     position: absolute;
-    left: -10px;
+    left: 4px;
+}
+#contactEmail::before {
+	background-image: url('../images/contact_email.png');
+}
+#contactPhone::before {
+	background-image: url('../images/contact_phone.png');
+}
+#contactGithub::before {
+	background-image: url('../images/contact_github.png');
 }
 
 #languages {
@@ -661,41 +670,77 @@ a > img.externalLink {
     }
 
     #introduction, #contact, #languages {
-        padding-right: 10px;
-        margin-top: 20px;
+        padding-right: 34px;
+        margin-top: 18px;
     }
 
     #contact {
+        position: absolute;
+        top: 14px;
+        right: -188px;
+		margin: 0;
         padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
     }
 
     #contact::before {
         visibility: hidden;
     }
-
-    #contact:not(.active) {
-        display: none;
+	
+	#contact > p, #languages {
+        cursor: pointer;
+		position: relative;
+        right: 0;
+		padding: 4px;
+		padding-left: 28px;
+		margin-bottom: 4px;
+		background-color: #586680;
+		border-style: solid;
+		border-color: #fccb0a;
+		border-radius: 15px 0 0 15px;
+		box-shadow: -2px 2px 6px 0px #0000002e;
+		transition: background-color 0.5s, right 0.5s;
+	}
+    #contact > p:hover, #languages:hover {
+        background-color: #fccb0a;
+    }
+	
+	#contact > p.active {
+		right: 186px;
+	}
+	#contact > #contactPhone.active {
+		right: 132px;
+	}
+	#contact > #contactGithub.active {
+		right: 118px;
+	}
+    
+    #contactEmail::before, #contactPhone::before, #contactGithub::before {
+        content: '';
     }
 
     #languages {
-        padding: 0;
-        display: flex;
-        width: unset;
-        min-width: fit-content;
-        margin-right: 20px;
-    }
-
-    #languages > p {
-        margin-right: 20px;
+        position: absolute;
+        top: 125px;;
+        right: -120px;
+        min-width: unset;
+        width: 150px;
+        margin: 0;
+        padding: 0 0 0 28px;
+        border-radius: 20px 0 0 36px;
     }
 
     #languages::before {
-        visibility: hidden;
-        height: 60px;
-        top: 24px;
+        position: absolute;
+        left: 4px;
+        top: 4px;
+        width: 20px;
+        height: 20px;
+        background-image: url('../images/contact_lang.png');
+        background-size: contain;
+        background-color: unset;
+    }
+    #languages.active {
+        right: -8px;
     }
 
     #mainContent {
@@ -856,7 +901,7 @@ a > img.externalLink {
   and (max-width: 768px) {
 
     #headerContent {
-        display: inline;
+        /*display: inline;*/
     }
 
     #avatar {
@@ -869,32 +914,77 @@ a > img.externalLink {
     }
 
     #introduction, #contact, #languages {
-        padding-right: 20px;
-        margin-top: 8px;
+        padding-right: 46px;
+        /*margin-top: 18px;*/
     }
 
     #contact {
+        position: absolute;
+        top: 14px;
+        right: -188px;
+		margin: 0;
         padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
     }
 
     #contact::before {
         visibility: hidden;
     }
-
-    #languages {
-        padding: 0;
-        display: flex;
+	
+	#contact > p, #languages {
+        cursor: pointer;
+		position: relative;
+        right: 0;
+		padding: 4px;
+		padding-left: 28px;
+		margin-bottom: 4px;
+		background-color: #586680;
+		border-style: solid;
+		border-color: #fccb0a;
+		border-radius: 15px 0 0 15px;
+		box-shadow: -2px 2px 6px 0px #0000002e;
+		transition: background-color 0.5s, right 0.5s;
+	}
+    #contact > p:hover, #languages:hover {
+        background-color: #fccb0a;
+    }
+	
+	#contact > p.active {
+		right: 186px;
+	}
+	#contact > #contactPhone.active {
+		right: 132px;
+	}
+	#contact > #contactGithub.active {
+		right: 118px;
+	}
+    
+    #contactEmail::before, #contactPhone::before, #contactGithub::before {
+        content: '';
     }
 
-    #languages > p {
-        margin-right: 20px;
+    #languages {
+        position: absolute;
+        top: 125px;
+        right: -120px;
+        min-width: unset;
+        width: 150px;
+        margin: 0;
+        padding: 0 0 0 28px;
+        border-radius: 20px 0 0 36px;
     }
 
     #languages::before {
-        visibility: hidden;
+        position: absolute;
+        left: 4px;
+        top: 4px;
+        width: 20px;
+        height: 20px;
+        background-image: url('../images/contact_lang.png');
+        background-size: contain;
+        background-color: unset;
+    }
+    #languages.active {
+        right: -8px;
     }
 
     #mainContent {
@@ -949,16 +1039,6 @@ a > img.externalLink {
 
     .column2 > div {
         padding-top: 0;
-    }
-    
-    #languages {
-        width: unset;
-        min-width: fit-content;
-        margin-right: 20px;
-    }
-    #languages::before {
-        height: 60px;
-        top: 24px;
     }
 
     #skills {

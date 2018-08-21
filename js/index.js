@@ -164,6 +164,17 @@ for (var menuOption in experienceSubMenu.options) {
     }
 }
 
+// mobile contact options
+var contactButtons = document.querySelectorAll('#contact > p');
+for (var i = 0; i < contactButtons.length; i++) {
+    contactButtons[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+    });
+}
+document.getElementById('languages').addEventListener("click", function () {
+    this.classList.toggle("active");
+});
+
 var textEmojis = [
     "ლ(ಠ_ಠ ლ)",
     "ಠ_ಠ",
