@@ -8,8 +8,18 @@ publications.addEventListener("mouseleave", function () {
     this.style.maxHeight = null;
 });
 
-var rightColumn = document.getElementsByClassName("rightColumn")[0];
+// Education -> Other section display animation after hover in the section
+var educationOther = document.querySelector("#educationOther > ul");
+educationOther.addEventListener("mouseenter", function () {
+    if (window.innerWidth < 769 || window.innerWidth > 1024)
+    this.style.maxHeight = this.scrollHeight + "px";
+});
+educationOther.addEventListener("mouseleave", function () {
+    this.style.maxHeight = null;
+});
 
+// righ column (Education section) toggle in small screen responsive sections
+var rightColumn = document.getElementsByClassName("rightColumn")[0];
 document.getElementById("rightColumnButtom").addEventListener("click", function () {
     rightColumn.classList.toggle("active");
 });

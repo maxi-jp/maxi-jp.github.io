@@ -29,6 +29,8 @@ header {
     background-color: #2196F3;
     width: 100%;
     height: 180px;
+    position: relative;
+    overflow: hidden;
 }
 
 #headerContent {
@@ -147,7 +149,7 @@ a:hover {
     padding: 16px 20px;
 }
 
-.column1 > div > div, .rightColumn > div > div {
+.column1 > div > div, .rightColumn > div > div:not(:last-child) {
     margin-bottom: 20px;
 }
 
@@ -423,21 +425,22 @@ a > img.externalLink {
     margin: 20px 0 12px 0;
 }
 
-#publications {
+#publications, #educationOther > ul {
     position: relative;
     max-height: 228px;
     overflow: hidden;
     box-shadow: inset black 0 -20px 28px -26px;
     transition: max-height 1s, box-shadow 1.5s;
 }
-#publications:hover {
+#publications:hover, #educationOther > ul:hover {
     box-shadow: none;
 }
-#publications:after {
+#publications:after, #educationOther > ul:after {
     content: "\2039";
     position: absolute;
-    color: #586680;
-    bottom: -4px;
+    /*color: #586680;*/
+    color: #fccb0a;
+    bottom: -2px;
     left: 50%;
     text-align: center;
     font-size: 47px;
@@ -445,9 +448,24 @@ a > img.externalLink {
     line-height: 0;
     writing-mode: vertical-rl;
     transform: rotate(180deg);
+
+    /*text-shadow: 1px  1px 0 #fccb0a,
+                -1px -1px 0 #fccb0a,
+                 1px -1px 0 #fccb0a,
+                -1px  1px 0 #fccb0a,
+                 1px  1px 0 #fccb0a;*/
+    text-shadow: 1px  1px 0 #586680,
+                -1px -1px 0 #586680,
+                1px -1px 0 #586680,
+                -1px  1px 0 #586680,
+                1px  1px 0 #586680;
 }
-#publications:hover:after {
+#publications:hover:after, #educationOther > ul:hover:after {
     content: none;
+}
+
+#educationOther > ul {
+    max-height: 228px;
 }
 
 #skills {
@@ -648,6 +666,26 @@ a > img.externalLink {
     font-size: 13px;
 }
 
+/* Extra extra small devices (phones, 360px and down) */
+@media only screen
+  and (max-width: 360px) {
+
+    #avatar {
+        width: unset !important;
+        min-width: 110px !important;
+        height: 66% !important;
+    }
+
+    #introduction {
+        margin-top: 28px !important;
+    }
+
+    #introduction > p:last-child {
+        margin-left: 20px;
+        clear: both;
+    }
+
+}
 
 /* Extra small devices (phones, 480px and down) */
 @media only screen
@@ -696,7 +734,7 @@ a > img.externalLink {
 		background-color: #586680;
 		border-style: solid;
 		border-color: #fccb0a;
-		border-radius: 15px 0 0 15px;
+		border-radius: 16px 0 0 16px;
 		box-shadow: -2px 2px 6px 0px #0000002e;
 		transition: background-color 0.5s, right 0.5s;
 	}
@@ -726,7 +764,7 @@ a > img.externalLink {
         width: 150px;
         margin: 0;
         padding: 0 0 0 28px;
-        border-radius: 20px 0 0 36px;
+        border-radius: 21px 0 0 36px;
     }
 
     #languages::before {
@@ -763,6 +801,7 @@ a > img.externalLink {
         box-shadow: none;
         transition: none;
         width: 100%;
+        min-width: unset;
         background-color: white;
     }
     .rightColumn.active {
@@ -784,6 +823,16 @@ a > img.externalLink {
     }
     #education > div:last-child {
         margin-bottom: 0;
+    }
+
+    #educationOther > ul {
+        max-height: unset;
+        overflow: unset;
+        box-shadow: unset;
+        transition: unset;
+    }
+    #educationOther > ul:after {
+        content: unset;
     }
 
     .column1 {
@@ -852,10 +901,6 @@ a > img.externalLink {
     #digital_jokers:not(.active),
     #others:not(.active) {
         display: none;
-    }
-
-    #wildbit {
-        
     }
 
     .column3:not(.active) {
@@ -1041,6 +1086,16 @@ a > img.externalLink {
         padding-top: 0;
     }
 
+    #educationOther > ul {
+        max-height: unset;
+        overflow: unset;
+        box-shadow: unset;
+        transition: unset;
+    }
+    #educationOther > ul:after {
+        content: unset;
+    }
+
     #skills {
         margin: 0 32px 20px 32px;
     }
@@ -1096,6 +1151,14 @@ a > img.externalLink {
     #rightColumnButtom {
         display: block;
         cursor: pointer; 
+    }
+
+    #educationOther > ul {
+        max-height: 500px;
+        overflow: auto;
+    }
+    #educationOther > ul:after {
+        content: none;
     }
 
     .column1 {
