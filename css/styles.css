@@ -666,6 +666,19 @@ a > img.externalLink {
     font-size: 13px;
 }
 
+#linkedin {
+    height: 100%;
+    line-height: 40px;
+    float: left;
+    padding-left: 20px;
+    margin-left: 20px;
+    font-size: 13px;
+    background-image: url(../images/contact_linkedin.png);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 0px 45%;
+}
+
 /* Extra extra small devices (phones, 360px and down) */
 @media only screen
   and (max-width: 360px) {
@@ -714,7 +727,7 @@ a > img.externalLink {
 
     #contact {
         position: absolute;
-        top: 14px;
+        top: 4px;
         right: -188px;
 		margin: 0;
         padding: 0;
@@ -758,7 +771,7 @@ a > img.externalLink {
 
     #languages {
         position: absolute;
-        top: 125px;;
+        top: 112px;
         right: -120px;
         min-width: unset;
         width: 150px;
@@ -938,6 +951,14 @@ a > img.externalLink {
     .cube {
         max-width: 70px;
     }
+    
+    #twitter {
+        padding-right: 12px;
+    }
+
+    #linkedin {
+        margin-left: 12px;
+    }
 }
 
 /* Small devices (between 480px and 768px) */
@@ -965,7 +986,7 @@ a > img.externalLink {
 
     #contact {
         position: absolute;
-        top: 14px;
+        top: 4px;
         right: -188px;
 		margin: 0;
         padding: 0;
@@ -1009,7 +1030,7 @@ a > img.externalLink {
 
     #languages {
         position: absolute;
-        top: 125px;
+        top: 112px;
         right: -120px;
         min-width: unset;
         width: 150px;
@@ -1267,3 +1288,45 @@ a > img.externalLink {
         float: right;
     }
 }
+
+@media only print {
+    
+    #tools > ul > li {
+        perspective: unset;
+    }
+    
+    .cube {
+        animation-name: unset;
+    }
+    
+    .cubeFaceFront {
+        transform: unset;
+    }
+    
+    .cube > div:not(:first-child) {
+        display: none;
+    }
+    
+    #publications {
+        max-height: 190px;
+        box-shadow: none;
+    }
+    
+    #publications:after, #educationOther > ul:after {
+        content: none;
+    }
+    
+    #publicationsTitle::before {
+        content: "Last ";
+    }
+    
+    #educationOther {
+        display: none;
+    }
+    
+    img.externalLink {
+        display: none;
+    }
+    
+}
+
