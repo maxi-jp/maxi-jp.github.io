@@ -244,6 +244,19 @@ a:hover {
     transform: scaleX(-1);
 }
 
+#avatar.metalSlug {
+    background-image: url('../images/avatar_metalslug.png');
+    transform: none;
+    image-rendering: pixelated;
+    background-position: 50px 100%;
+    background-size: 61%;
+}
+#avatar.wildbit {
+    background-image: url('../images/avatar_wildbit.jpg');
+    transform: none;
+    background-position: 50px 100%;
+}
+
 #introduction {
     /*background-color: green;*/
     flex-grow: 1;
@@ -698,6 +711,12 @@ a > img.externalLink {
         clear: both;
     }
 
+    #avatar.wildbit {
+        min-width: 88px !important;
+        background-position: 0;
+        margin-right: 8px;
+    }
+
 }
 
 /* Extra small devices (phones, 480px and down) */
@@ -713,6 +732,14 @@ a > img.externalLink {
         width: 140px;
         min-width: 140px;
         background-position: bottom;
+    }
+
+    #avatar.metalSlug {
+        background-position: 20px 100%;
+        background-size: 70%;
+    }
+    #avatar.wildbit {
+        background-position: 0;
     }
 
     header h1 {
@@ -771,7 +798,7 @@ a > img.externalLink {
 
     #languages {
         position: absolute;
-        top: 112px;
+        top: 114px;
         right: -120px;
         min-width: unset;
         width: 150px;
@@ -1030,7 +1057,7 @@ a > img.externalLink {
 
     #languages {
         position: absolute;
-        top: 112px;
+        top: 114px;
         right: -120px;
         min-width: unset;
         width: 150px;

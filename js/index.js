@@ -181,9 +181,21 @@ for (var i = 0; i < contactButtons.length; i++) {
         this.classList.toggle("active");
     });
 }
-document.getElementById('languages').addEventListener("click", function () {
+document.getElementById("languages").addEventListener("click", function () {
     this.classList.toggle("active");
 });
+
+// avatar random switching
+var avatarDiv = document.getElementById("avatar");
+var rValue = Math.random();
+if (rValue < 0.33) {
+    avatarDiv.classList.add("metalSlug");
+    avatarDiv.setAttribute("title", "Maxi Metal Slug ver. By Diego Galvez");
+}
+else if (rValue < 0.66) {
+    avatarDiv.classList.add("wildbit");
+    avatarDiv.removeAttribute("title");
+}
 
 var textEmojis = [
     "ლ(ಠ_ಠ ლ)",
