@@ -1318,6 +1318,10 @@ a > img.externalLink {
 
 @media only print {
     
+    .mainColumn, .rightColumn {
+        padding-bottom: 0 !important;
+    }
+
     #tools > ul > li {
         perspective: unset;
     }
