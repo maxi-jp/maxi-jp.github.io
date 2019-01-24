@@ -1356,7 +1356,7 @@ a > img.externalLink {
     }
     
     img.externalLink {
-        display: none;
+        /*display: none;*/
     }
     
 }
